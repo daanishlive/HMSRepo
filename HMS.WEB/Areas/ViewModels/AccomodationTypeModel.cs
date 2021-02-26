@@ -8,6 +8,8 @@ namespace HMS.WEB.Areas.ViewModels
 {
     public class AccomodationTypeModel
     {
+        public string searchTerm { get; set; }
+
         public IEnumerable<AcomodationType> AcomodationTypes { get; set; }
     }
 
