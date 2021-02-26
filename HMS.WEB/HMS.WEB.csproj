@@ -167,8 +167,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\DashBoard\Controllers\AccomodationTypesController.cs" />
     <Compile Include="Areas\DashBoard\Controllers\DashBoardController.cs" />
     <Compile Include="Areas\DashBoard\DashBoardAreaRegistration.cs" />
+    <Compile Include="Areas\ViewModels\AccomodationTypeModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -222,6 +224,9 @@
     <Content Include="Areas\DashBoard\Content\vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="Areas\DashBoard\Content\vendor\jquery\jquery.min.map" />
     <Content Include="Areas\DashBoard\Content\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Areas\DashBoard\Views\AccomodationTypes\Index.cshtml" />
+    <Content Include="Areas\DashBoard\Views\AccomodationTypes\_Listing.cshtml" />
+    <Content Include="Areas\DashBoard\Views\AccomodationTypes\_Action.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -295,6 +300,10 @@
     <ProjectReference Include="..\HMS.Enities\HMS.Enities.csproj">
       <Project>{478F847D-0718-4568-8FB0-9EC2765960CD}</Project>
       <Name>HMS.Enities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMS.Services\HMS.Services.csproj">
+      <Project>{B6D4FC5B-3BD6-49C1-B488-57BC6C049645}</Project>
+      <Name>HMS.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

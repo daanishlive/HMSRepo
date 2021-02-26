@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">
+    <h2>Accomodation Types</h2>
+</div>
+
+<div class="row mb-2">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+        <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+            <button class="btn btn-outline-secondary" type="button">Reset</button>
+            <button id="createBTN" class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#actionModal">Create</button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    @{ Html.RenderAction("Listing");}
+</div>
+
+
+
+<div class="modal fade" id="actionModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog" role="document">
+       
+    </div>
+</div>
+
+<script>
+    $("#createBTN").click(function () {
+       
+            $.ajax({  
+                url: '@Url.Action("Action", "AccomodationTypes")',
+            })
+                .done(function (response) {
+                    $("#actionModal .modal-dialog").html(response);
+                   
+
+                })
+                .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    swal({
+                        title: "Warning",
+                        text: "Please Enter Required Fields",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                });
+        
+    });
+</script>
+

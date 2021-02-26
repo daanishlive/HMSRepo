@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
 
     <link href="~/Areas/DashBoard/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
+    <script src="~/Areas/DashBoard/Content/vendor/jquery/jquery.min.js"></script>
     <link href="~/Areas/DashBoard/Content/css/simple-sidebar.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/e44ea1d5c0.js" crossorigin="anonymous"></script>
 
@@ -27,7 +27,7 @@
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">HMS </div>
             <div class="list-group list-group-flush">
-                <a href="@Url.Action("","")" class="list-group-item list-group-item-action bg-light">Accomodation TYpe</a>
+                <a href="@Url.Action("Index","AccomodationTypes")" class="list-group-item list-group-item-action bg-light">Accomodation TYpe</a>
 
                 <a href="@Url.Action("Index","Roles")" class="list-group-item list-group-item-action bg-light">Roles</a>
 
@@ -69,7 +69,7 @@
     @Html.AntiForgeryToken()
     }
 
-    <script src="~/Areas/DashBoard/Content/vendor/jquery/jquery.min.js"></script>
+    
 
     <!-- Menu Toggle Script -->
     <script src="~/Areas/DashBoard/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
