@@ -2,24 +2,35 @@
 
 <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" >
-            Create Accomodation Type
+        <h5 class="modal-title">
+            @if (Model.ID > 0)
+            {
+                <span>Edit Accoodation Type</span>
+            }
+            else
+            {
+                <span>Create Accomodation Type</span>
+            }
+            
         </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
         <form id="createAccomodation">
+            <input type="hidden" name="ID" value="@Model.ID"/>
             <div class="form-group">
                 <label>Name</label>
-                <input  class="form-control" id="name" name="Name"  placeholder="Enter Name">
+                <input  class="form-control" id="name" value="@Model.Name" name="Name"  placeholder="Enter Name">
                
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea class="form-control" name="Description" placeholder="Enter Description">
-                
+                <textarea class="form-control"  name="Description"  placeholder="Enter Description">
+                @Model.Description
                 </textarea>
             </div>
            <div id="errorDiv">

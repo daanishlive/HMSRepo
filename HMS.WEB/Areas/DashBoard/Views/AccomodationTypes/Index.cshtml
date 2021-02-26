@@ -1,55 +1,54 @@
-﻿
+﻿@model HMS.WEB.Areas.ViewModels.AccomodationTypeModel 
 @{
     ViewBag.Title = "Index";
 }
-<div class="row">
+<div class="row mb-2">
     <h2>Accomodation Types</h2>
 </div>
 
-<div class="row mb-2">
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-        <div class="input-group-append" id="button-addon4">
-            <button class="btn btn-outline-secondary" type="button">Search</button>
-            <button class="btn btn-outline-secondary" type="button">Reset</button>
-            <button id="createBTN" class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#actionModal">Create</button>
-        </div>
+<div class="row mb-3">
+    <div class="col col-lg-12">
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" required name="searchTerm" value="@Model.searchTerm" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                <div class="input-group-append" id="button-addon4">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    <a class="btn btn-outline-secondary" href="@Url.Action("Index", "AccomodationTypes")">Reset</a>
+                    <button data-href="@Url.Action("Action", "AccomodationTypes")" class="btn-acomoCurd btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#actionModal">Create</button>
+                </div>
+            </div>
+        </form>
     </div>
+   
 </div>
 
 <div class="row">
-    @{ Html.RenderAction("Listing");}
+    @{ Html.RenderPartial("_Listing", Model);}
 </div>
 
 
 
-<div class="modal fade" id="actionModal" tabindex="-1" role="dialog" >
+<div class="modal fade" id="actionModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
-       
+
     </div>
 </div>
 
 <script>
-    $("#createBTN").click(function () {
-       
-            $.ajax({  
-                url: '@Url.Action("Action", "AccomodationTypes")',
-            })
-                .done(function (response) {
-                    $("#actionModal .modal-dialog").html(response);
-                   
+    $(".btn-acomoCurd").click(function () {
 
-                })
-                .fail(function (XMLHttpRequest, textStatus, errorThrown) {
-                    swal({
-                        title: "Warning",
-                        text: "Please Enter Required Fields",
-                        icon: "warning",
-                        buttons: true,
-                        dangerMode: true,
-                    })
-                });
-        
+        $.ajax({
+            url: $(this).attr("data-href"),
+        })
+            .done(function (response) {
+                $("#actionModal .modal-dialog").html(response);
+
+
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("fail");
+            })
+
     });
 </script>
 
