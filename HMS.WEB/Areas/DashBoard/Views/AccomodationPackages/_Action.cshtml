@@ -1,0 +1,86 @@
+﻿@model HMS.WEB.Areas.ViewModels.AccomodationPacakageActionModel
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">
+            @if (Model.ID > 0)
+            {
+                <span>Edit Accomodation Package</span>
+            }
+            else
+            {
+                <span>Create Accomodation Package</span>
+            }
+
+        </h5>
+
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form id="createAccomodationPackage">
+            <input type="hidden" name="ID" value="@Model.ID" />
+
+            <div class="form-group">
+                <label>Accomodation Type</label>
+                <select class="form-control" name="AccomodationTypeID">
+                    @if (Model.AcomodationTypes!=null)
+                    {
+                        foreach (var accomodationtype  in Model.AcomodationTypes)
+                        {
+                            <option value="@accomodationtype.ID" @(accomodationtype.ID==Model.AccomodationTypeID ? "selected":string.Empty)>
+                                @accomodationtype.Name
+                            </option>
+                        }
+                    }
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" id="name" value="@Model.Name" name="Name" placeholder="Enter Accomodation Package Name">
+
+            </div>
+            <div class="form-group">
+                <label>No Of Rooms</label>
+                <input class="form-control" value="@Model.NoOfRooms" name="NoOfRooms" placeholder="0">
+            </div>
+            <div class="form-group">
+                <label>Fee Per Night</label>
+                <input class="form-control" value="@Model.FeePerNight" name="FeePerNight" placeholder="0">
+            </div>
+            <div id="errorDiv">
+
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="saveBtn" type="button" class="btn btn-primary">Save changes</button>
+    </div>
+</div>
+
+<script>
+     $("#saveBtn").click(function () {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Action", "AccomodationPackages")',
+                data: $("#createAccomodationPackage").serialize()
+            })
+                .done(function (response) {
+                    if (response.Success) {
+                        location.reload();
+                    }
+                    else {
+                        $(".errorDiv").html(response.Message);
+                    }
+
+                })
+                
+              
+
+    });
+</script>
+

@@ -1,0 +1,72 @@
+﻿@model HMS.WEB.Areas.ViewModels.AccomodationPacakageListingModel
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row mb-2">
+    <h2>Accomodation Package</h2>
+</div>
+
+<div class="row mb-3">
+    <div class="col col-lg-12">
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search"  name="searchTerm" value="@Model.searchTerm" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                @if (Model.AcomodationTypes != null && Model.AcomodationTypes.Count() > 0)
+                {
+                    <select name="AccomodationTypeID" class="form-control">
+                        <option value="0">
+                            Select Accomodation Package
+                        </option>
+                        @foreach (var acomodationType in Model.AcomodationTypes)
+                        {
+                            <option value="@acomodationType.ID" @(acomodationType.ID==Model.AccomodationTypeID ? "selected":string.Empty)>
+                                @acomodationType.Name
+                            </option>
+                        }
+                    </select>
+                }
+
+                <div class="input-group-append" id="button-addon4">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    <a class="btn btn-outline-secondary" href="@Url.Action("Index", "AccomodationPackages")">Reset</a>
+                    <button data-href="@Url.Action("Action", "AccomodationPackages")" class="btn-acomoCurd btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#actionModal">Create</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="row">
+    @{ Html.RenderPartial("_Listing", Model);}
+</div>
+
+
+
+<div class="modal fade" id="actionModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+
+    </div>
+</div>
+
+<script>
+    $(".btn-acomoCurd").click(function () {
+
+        $.ajax({
+            url: $(this).attr("data-href"),
+        })
+            .done(function (response) {
+                $("#actionModal .modal-dialog").html(response);
+
+
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("fail");
+            })
+
+    });
+</script>
+
+
