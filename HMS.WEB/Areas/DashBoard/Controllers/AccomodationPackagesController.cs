@@ -18,9 +18,10 @@ namespace HMS.WEB.Areas.DashBoard.Controllers
 
         public ActionResult Index(string searchTerm,int? accomodationTypeID,int? page)
         {
-            AccomodationPacakageListingModel model = new AccomodationPacakageListingModel();
+            
             int recordSize = 3;
             page = page ?? 1;
+            AccomodationPacakageListingModel model = new AccomodationPacakageListingModel();
             model.searchTerm = searchTerm;
             model.AccomodationTypeID = accomodationTypeID;
 
