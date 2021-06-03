@@ -12,7 +12,7 @@ namespace HMS.WEB.Areas.DashBoard.Controllers
 {
     public class AccomodationsController : Controller
     {
-        AccomodationService accomodationService = new Services.AccomodationService();
+        AccomodationService accomodationService = new AccomodationService();
 
         AccomodationPackageService accomodationPackageService = new AccomodationPackageService();
         

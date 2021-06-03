@@ -164,17 +164,20 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\DashBoard\Controllers\AccomodationPackagesController.cs" />
     <Compile Include="Areas\DashBoard\Controllers\AccomodationsController.cs" />
     <Compile Include="Areas\DashBoard\Controllers\AccomodationTypesController.cs" />
     <Compile Include="Areas\DashBoard\Controllers\DashBoardController.cs" />
+    <Compile Include="Areas\DashBoard\Controllers\RolesController.cs" />
+    <Compile Include="Areas\DashBoard\Controllers\UsersController.cs" />
     <Compile Include="Areas\DashBoard\DashBoardAreaRegistration.cs" />
     <Compile Include="Areas\ViewModels\AccomodationModels.cs" />
     <Compile Include="Areas\ViewModels\AccomodationPacakageModel.cs" />
     <Compile Include="Areas\ViewModels\AccomodationTypeModel.cs" />
+    <Compile Include="Areas\ViewModels\RolesViewModel.cs" />
+    <Compile Include="Areas\ViewModels\UsersViewModels.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -241,6 +244,14 @@
     <Content Include="Areas\DashBoard\Views\Accomodations\_Action.cshtml" />
     <Content Include="Areas\DashBoard\Views\Accomodations\_Listing.cshtml" />
     <Content Include="Areas\DashBoard\Views\Accomodations\_Delete.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Users\_Action.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Users\_Delete.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Users\_Listing.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Users\Index.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Roles\_Action.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Roles\_Delete.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Roles\_Listing.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

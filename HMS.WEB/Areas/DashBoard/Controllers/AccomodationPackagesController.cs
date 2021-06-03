@@ -22,7 +22,7 @@ namespace HMS.WEB.Areas.DashBoard.Controllers
             int recordSize = 3;
             page = page ?? 1;
             AccomodationPacakageListingModel model = new AccomodationPacakageListingModel();
-            model.searchTerm = searchTerm;
+            model.SearchTerm = searchTerm;
             model.AccomodationTypeID = accomodationTypeID;
 
             model.AcomodationPackages = accomodationPackageService.SearchAcomodationPackage(searchTerm, accomodationTypeID,page.Value,recordSize);

@@ -1,0 +1,92 @@
+﻿@model HMS.WEB.Areas.ViewModels.UserActionModel
+
+@if (Model != null)
+{
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">
+                @if (!string.IsNullOrEmpty(Model.ID))
+                {
+                    <span>Edit User</span>
+                }
+                else
+                {
+                    <span>Create User</span>
+                }
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="actionForm">
+                <input type="hidden" name="ID" value="@Model.ID" />
+                @*<div class="form-group">
+            <label>Accomodation Packages</label>
+            <select class="form-control" name="AccomodationPackageID">
+                @if (Model.AccomodationPackages != null)
+                {
+                    foreach (var accomodationPackages in Model.AccomodationPackages)
+                    {
+                        <option value="@accomodationPackages.ID" @(accomodationPackages.ID == Model.AccomodationPackageID ? "selected" : string.Empty)>
+                            @accomodationPackages.Name
+                        </option>
+                    }
+                }
+            </select>
+        </div>*@
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" name="FullName" placeholder="Enter Full Name." value="@Model.FullName">
+                </div>
+                <div class="form-group">
+                    <label>E-Mail</label>
+                    <textarea class="form-control" name="Email" placeholder="Enter Your Email.">@Model.Email</textarea>
+                </div>
+                <div class="form-group">
+                    <label>User Name</label>
+                    <textarea class="form-control" name="UserName" placeholder="Enter Your UserName.">@Model.UserName</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <textarea class="form-control" name="Country" placeholder="Enter Your Country.">@Model.Country</textarea>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <textarea class="form-control" name="City" placeholder="Enter City">@Model.City</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea class="form-control" name="Address" placeholder="Enter Accomodation Description.">@Model.Address</textarea>
+                </div>
+            </form>
+
+            <div class="errorDiv">
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="actionButton" type="button" class="btn btn-primary"><i class="fas fa-save mr-1"></i> Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times mr-1"></i> Close</button>
+        </div>
+    </div>
+}
+
+<script>
+	$("#actionButton").click(function () {
+		$.ajax({
+			url: '@Url.Action("Action", "Users")',
+			type: "post",
+			data: $("#actionForm").serialize()
+		})
+		.done(function (response) {
+			if(response.Success)
+			{
+				location.reload();
+			}
+			else {
+				$(".errorDiv").html(response.Message);
+			}
+		});
+	});
+</script>

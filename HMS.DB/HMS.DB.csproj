@@ -65,6 +65,30 @@
     <Compile Include="Migrations\202102261906325_addedVirtual.Designer.cs">
       <DependentUpon>202102261906325_addedVirtual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103150930188_AddedEntityInHMSUser.cs" />
+    <Compile Include="Migrations\202103150930188_AddedEntityInHMSUser.Designer.cs">
+      <DependentUpon>202103150930188_AddedEntityInHMSUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105261654052_AccomodationType.cs" />
+    <Compile Include="Migrations\202105261654052_AccomodationType.Designer.cs">
+      <DependentUpon>202105261654052_AccomodationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105261656539_AddedAccomodationTypeInDropdown.cs" />
+    <Compile Include="Migrations\202105261656539_AddedAccomodationTypeInDropdown.Designer.cs">
+      <DependentUpon>202105261656539_AddedAccomodationTypeInDropdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105310726188_ChangesForBug.cs" />
+    <Compile Include="Migrations\202105310726188_ChangesForBug.Designer.cs">
+      <DependentUpon>202105310726188_ChangesForBug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011246417_AcomodationTypeID_BUG.cs" />
+    <Compile Include="Migrations\202106011246417_AcomodationTypeID_BUG.Designer.cs">
+      <DependentUpon>202106011246417_AcomodationTypeID_BUG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011258413_Test.cs" />
+    <Compile Include="Migrations\202106011258413_Test.Designer.cs">
+      <DependentUpon>202106011258413_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +108,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102261906325_addedVirtual.resx">
       <DependentUpon>202102261906325_addedVirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103150930188_AddedEntityInHMSUser.resx">
+      <DependentUpon>202103150930188_AddedEntityInHMSUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105261654052_AccomodationType.resx">
+      <DependentUpon>202105261654052_AccomodationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105261656539_AddedAccomodationTypeInDropdown.resx">
+      <DependentUpon>202105261656539_AddedAccomodationTypeInDropdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105310726188_ChangesForBug.resx">
+      <DependentUpon>202105310726188_ChangesForBug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011246417_AcomodationTypeID_BUG.resx">
+      <DependentUpon>202106011246417_AcomodationTypeID_BUG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011258413_Test.resx">
+      <DependentUpon>202106011258413_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

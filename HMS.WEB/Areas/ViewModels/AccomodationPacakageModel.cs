@@ -9,10 +9,10 @@ namespace HMS.WEB.Areas.ViewModels
 {
     public class AccomodationPacakageListingModel
     {
-        public string searchTerm { get; set; }
         public IEnumerable<AcomodationPackage> AcomodationPackages { get; set; }
-        public IEnumerable<AcomodationType> AcomodationTypes { get; set; }
         public int? AccomodationTypeID { get; set; }
+        public IEnumerable<AcomodationType> AcomodationTypes { get; set; }
+        public string SearchTerm { get; set; }
         public Pager Pager { get; set; }
     }
 
