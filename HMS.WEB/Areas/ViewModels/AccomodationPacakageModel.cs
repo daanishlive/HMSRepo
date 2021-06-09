@@ -10,8 +10,8 @@ namespace HMS.WEB.Areas.ViewModels
     public class AccomodationPacakageListingModel
     {
         public IEnumerable<AcomodationPackage> AcomodationPackages { get; set; }
+        public IEnumerable<AcomodationType> AccomodationTypes { get; set; }
         public int? AccomodationTypeID { get; set; }
-        public IEnumerable<AcomodationType> AcomodationTypes { get; set; }
         public string SearchTerm { get; set; }
         public Pager Pager { get; set; }
     }
@@ -21,10 +21,10 @@ namespace HMS.WEB.Areas.ViewModels
 
         public int ID { get; set; }
         public int AccomodationTypeID { get; set; }
-        public AcomodationType AcomodationType { get; set; }
+        public AcomodationType AccomodationType { get; set; }
         public string Name { get; set; }
         public int NoOfRooms { get; set; }
         public decimal FeePerNight { get; set; }
-        public IEnumerable<AcomodationType> AcomodationTypes { get; set; }
+        public IEnumerable<AcomodationType> AccomodationTypes { get; set; }
     }
 }

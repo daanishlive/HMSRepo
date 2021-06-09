@@ -26,7 +26,7 @@ namespace HMS.WEB.Areas.DashBoard.Controllers
             model.AccomodationTypeID = accomodationTypeID;
 
             model.AcomodationPackages = accomodationPackageService.SearchAcomodationPackage(searchTerm, accomodationTypeID,page.Value,recordSize);
-            model.AcomodationTypes = accomodationTypesService.GetAllAccomodationType();
+            model.AccomodationTypes = accomodationTypesService.GetAllAccomodationType();
             var totalRecords= accomodationPackageService.SearchAcomodationPackageCount(searchTerm, accomodationTypeID);
 
             model.Pager = new Pager(totalRecords, page,recordSize);
@@ -49,7 +49,7 @@ namespace HMS.WEB.Areas.DashBoard.Controllers
                 model.NoOfRooms = accomodationPackage.NoOfRooms;
                 model.FeePerNight = accomodationPackage.FeePerNight;
             }
-            model.AcomodationTypes = accomodationTypesService.GetAllAccomodationType();
+            model.AccomodationTypes = accomodationTypesService.GetAllAccomodationType();
 
             return PartialView("_Action",model);
         }
@@ -75,7 +75,7 @@ namespace HMS.WEB.Areas.DashBoard.Controllers
                 AcomodationPackage acomodationPackage = new AcomodationPackage();
                 acomodationPackage.AccomodationTypeID = model.AccomodationTypeID;
                 acomodationPackage.Name = model.Name;
-                acomodationPackage.AcomodationType = model.AcomodationType;
+                acomodationPackage.AcomodationType = model.AccomodationType;
                 acomodationPackage.Name = model.Name;
                 acomodationPackage.NoOfRooms = model.NoOfRooms;
                 acomodationPackage.FeePerNight = model.FeePerNight;

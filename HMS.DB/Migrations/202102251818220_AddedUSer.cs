@@ -32,7 +32,7 @@ namespace HMS.DB.Migrations
                         AcomodationType_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.AcomodationTypes", t => t.AcomodationType_ID)
+                .ForeignKey("dbo.AcomodationTypes", t => t.AcomodationType_ID, cascadeDelete: true)
                 .Index(t => t.AcomodationType_ID);
             
             CreateTable(

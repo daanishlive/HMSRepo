@@ -16,6 +16,9 @@ namespace HMS.WEB.Areas.DashBoard.Controllers
 {
     public class RolesController : Controller
     {
+
+        //role manager table AspNetRoles
+
         private HMSSignInManager _signInManager;
         private HMSUserManager _userManager;
         private HMSRolesManager _roleManager;

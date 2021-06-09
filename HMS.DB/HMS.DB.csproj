@@ -89,6 +89,14 @@
     <Compile Include="Migrations\202106011258413_Test.Designer.cs">
       <DependentUpon>202106011258413_Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106081016111_AccomodationType1.cs" />
+    <Compile Include="Migrations\202106081016111_AccomodationType1.Designer.cs">
+      <DependentUpon>202106081016111_AccomodationType1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106081022335_testACtype.cs" />
+    <Compile Include="Migrations\202106081022335_testACtype.Designer.cs">
+      <DependentUpon>202106081022335_testACtype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -126,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106011258413_Test.resx">
       <DependentUpon>202106011258413_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106081016111_AccomodationType1.resx">
+      <DependentUpon>202106081016111_AccomodationType1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106081022335_testACtype.resx">
+      <DependentUpon>202106081022335_testACtype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

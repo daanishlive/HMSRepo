@@ -252,6 +252,8 @@
     <Content Include="Areas\DashBoard\Views\Roles\Index.cshtml" />
     <Content Include="Areas\DashBoard\Views\Roles\_Delete.cshtml" />
     <Content Include="Areas\DashBoard\Views\Roles\_Listing.cshtml" />
+    <Content Include="Areas\DashBoard\Views\Users\_AddRoles.cshtml" />
+    <None Include="Properties\packages.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -29,7 +29,12 @@ namespace HMS.WEB.Areas.ViewModels
         public string Country { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
+    }
 
-        
+    public class UserRoleModel
+    {
+        public string UserID { get; set; }
+        public IEnumerable<IdentityRole> UserRoles { get; set; }
+        public IEnumerable<IdentityRole> Roles { get; set; }
     }
 }
